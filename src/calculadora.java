@@ -22,10 +22,13 @@ public class calculadora {
     private JButton btnSubtrair;
     private JPanel painelCalculadora;
 
+    private double num1, num2, resultado;
+    private String operador;
+
+
     //.settext pega o numero do botão clicado e mostra no resultado
 
     public calculadora() {
-        final Integer[] num1 = {0};
         btn0.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -50,19 +53,121 @@ public class calculadora {
                 txtResultado.setText(txtResultado.getText() + "3");
             }
         });
+        btn4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtResultado.setText(txtResultado.getText() + "4");
+            }
+        });
+        btn5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtResultado.setText(txtResultado.getText() + "5");
+            }
+        });
+        btn6.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtResultado.setText(txtResultado.getText() + "6");
+            }
+        });
 
-btnsoma.addActionListener(new ActionListener() {
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        num[0] = Integer.valueOf(txtResultado.getText());
+        btn7.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtResultado.setText(txtResultado.getText() + "7");
+            }
+        });
+
+        btn8.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtResultado.setText(txtResultado.getText() + "8");
+            }
+        });
+
+        btn9.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtResultado.setText(txtResultado.getText() + "9");
+            }
+        });
+
+
+        //  txtResultado.getText pega o texto inserido no resultado que seria o botão que foi clicado e double.parseDouble transforma para double e armazena na variavel num 1
+        btnsoma.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                num1 = Double.parseDouble(txtResultado.getText());
+                operador = "+";
+                txtResultado.setText("");
+            }
+        });
+        btnSubtrair.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                num1 = Double.parseDouble(txtResultado.getText());
+                operador = "-";
+                txtResultado.setText("");
+            }
+        });
+
+        btnMultiplicar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                num1 = Double.parseDouble(txtResultado.getText());
+                operador = "*";
+                txtResultado.setText("");
+            }
+        });
+        btndDividir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                num1 = Double.parseDouble(txtResultado.getText());
+                operador = "/";
+                txtResultado.setText("");
+            }
+        });
+
+        btnResultado.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                num2 = Double.parseDouble(txtResultado.getText());
+                switch (operador) {
+                    case "+":
+                        resultado = num1 + num2;
+                        break;
+                    case "-":
+                        resultado = num1 - num2;
+                        break;
+                    case "*":
+                        resultado = num1 * num2;
+                        break;
+                    case "/":
+                        if (num2 != 0) {
+                            resultado = num1 / num2;
+                        } else {
+                            txtResultado.setText("ERRO");
+                            return;
+                        }
+                        break;
+                }
+                txtResultado.setText(String.valueOf(resultado));
+            }
+        });
+
+        //  num1 = num2 = resultado = 0; zera as variavel da direita pra esquerda
+        btnLimpar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtResultado.setText("");
+                num1 = num2 = resultado = 0;
+                operador = "";
+            }
+        });
     }
-});
 
-}
-
-
-
-public static void main(String[]args){
+    public static void main(String[] args) {
         JFrame frame = new JFrame("Minha Calculadora");
         frame.setContentPane(new calculadora().painelCalculadora);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -70,4 +175,4 @@ public static void main(String[]args){
         frame.setSize(400, 400);
         frame.setVisible(true);
     }
-    }
+}
