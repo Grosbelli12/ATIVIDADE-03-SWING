@@ -172,7 +172,6 @@ public class calculadora {
         frame.setContentPane(new calculadora().painelCalculadora);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setSize(400, 400);
         frame.setVisible(true);
     }
 }
