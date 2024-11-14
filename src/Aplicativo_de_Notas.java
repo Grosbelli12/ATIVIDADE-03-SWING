@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Aplicativo_de_Notas {
@@ -12,6 +11,7 @@ public class Aplicativo_de_Notas {
     private JTextArea txtaListadeNotas;
     private JLabel lbldigitarnotas;
     private JLabel lblResultado;
+    private JButton lbllimpar;
     Double aux = 0.0;
 
 
@@ -44,7 +44,14 @@ public class Aplicativo_de_Notas {
                 }
             }
         });
-
+        lbllimpar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtaListadeNotas.setText("");
+                txtInserirNotas.setText("");
+                lblResultado.setText("");
+            }
+        });
 
     }
 
