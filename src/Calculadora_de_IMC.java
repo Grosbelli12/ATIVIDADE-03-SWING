@@ -39,14 +39,19 @@ public class Calculadora_de_IMC {
                 } else if (altura < 1.00 || altura > 2.50) {
                     lblErro.setText("Altura incorreta!");
                 } else {
+                    lblErro.setText("");
                     imc = peso / altura;
-                    if (imc >= 18.5 && imc < 25) {
-                    categoria = ("normal");
-                    } else if (imc >= 25 && imc < 30) {
-                        lblResultado.setText("Sobrepeso");
-                    }
                 }
-
+                    if (imc >= 18.5 && imc < 25) {
+                        categoria = (" normal ");
+                    } else if (imc >= 25 && imc < 30) {
+                        categoria = (" Sobrepeso ");
+                    } else if (imc >= 30) {
+                        categoria = (" Obesidade ");
+                    }else {
+                        categoria = (" baixo peso ");
+                    }
+                    lblResultado.setText( "Sua categoria de IMC é: " + categoria + " e seu IMC é: " + imc);
             }
         });
 
