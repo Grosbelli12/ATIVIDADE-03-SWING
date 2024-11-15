@@ -23,7 +23,7 @@ public class Cadastro_de_Contatos {
     private ArrayList contatos = new ArrayList();
     private int i = 0;
 
-// ele permite que eu selecone os dados dentro da Jlist e também armazena os dados e gerencia eles
+    // ele permite que eu selecone os dados dentro da Jlist e também armazena os dados e gerencia eles
     DefaultListModel<String> contatinhos = new DefaultListModel<>();
 
     public Cadastro_de_Contatos() {
@@ -40,7 +40,7 @@ public class Cadastro_de_Contatos {
                     txtAstatus.setText("Preencha todos os campos acima"); // txtAstatus é o local feio que mostra as strings
                 } else {
                     i++;
-                    informacoes = +i + "° Contato " + nomes + "," + telefones + "," + email;
+                    informacoes = +i + "° Contato Nome: "  + nomes + ", Telefone:  " + telefones + " ,E-mail: " + email;
                     contatos.add(informacoes);
                     contatinhos.addElement(informacoes);
                 }
@@ -49,13 +49,13 @@ public class Cadastro_de_Contatos {
         btnlimpar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                // excluir para pegar a posião dos elementps
                 int excluir = liscontatos.getSelectedIndex(); // quando eu clicar no qual eu desejo excluir ele irá retornar a posição dele
 
                 // fazer a verificão pois se não selecionar nada não terá posição assim não excluirá nada e pedira para selecionar algo
                 if (excluir != -1) {
                     contatos.remove(excluir); // excluir o que foi selecionado
-
+                    contatinhos.removeElement(excluir); // usam o excluir para remover pelo indice
                     txtAstatus.setText("Contato removido com sucesso!");
                 } else {
                     txtAstatus.setText("Selecione um contato para remover.");
