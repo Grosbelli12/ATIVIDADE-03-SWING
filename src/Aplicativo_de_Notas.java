@@ -12,9 +12,8 @@ public class Aplicativo_de_Notas {
     private JLabel lbldigitarnotas;
     private JLabel lblResultado;
     private JButton lbllimpar;
+
     Double aux = 0.0;
-
-
     double notas = 0;
     int i = 0;
     double media = 0;
@@ -31,6 +30,7 @@ public class Aplicativo_de_Notas {
                 i++;
                 listadeNotas.add(i);
                 txtaListadeNotas.append(+i + "° nota " + notas + "\n");
+
             }
         });
         btncalcular.addActionListener(new ActionListener() {
