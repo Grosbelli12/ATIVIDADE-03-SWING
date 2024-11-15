@@ -40,7 +40,7 @@ public class Cadastro_de_Contatos {
                     txtAstatus.setText("Preencha todos os campos acima"); // txtAstatus é o local feio que mostra as strings
                 } else {
                     i++;
-                    informacoes = +i + "° Contato Nome: "  + nomes + ", Telefone:  " + telefones + " ,E-mail: " + email;
+                    informacoes = +i + "° Contato Nome: " + nomes + ", Telefone:  " + telefones + " ,E-mail: " + email;
                     contatos.add(informacoes);
                     contatinhos.addElement(informacoes);
                 }
