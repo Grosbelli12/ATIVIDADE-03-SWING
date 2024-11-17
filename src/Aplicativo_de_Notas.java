@@ -27,10 +27,15 @@ public class Aplicativo_de_Notas {
             @Override
             public void actionPerformed(ActionEvent e) {
                 notas = Double.parseDouble(txtInserirNotas.getText());
+                if (notas < 0 || notas < 10) {
                 aux = aux + notas;
                 i++;
                 listadeNotas.add(i);
                 txtaListadeNotas.append(+i + "° nota " + notas + "\n");
+                }else{
+                    JOptionPane.showMessageDialog(null, "Informe uma nota válida");
+                    txtInserirNotas.setText("");
+                }
 
             }
         });
