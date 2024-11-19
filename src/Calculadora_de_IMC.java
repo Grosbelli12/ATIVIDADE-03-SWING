@@ -50,8 +50,8 @@ public class Calculadora_de_IMC {
                     categoria = (" Obesidade ");
                 } else {
                     categoria = (" baixo peso ");
-                }
-                lblResultado.setText("Sua categoria de IMC é: " + categoria + " e seu IMC é: " + imc);
+                } //String.format("%.2f",imc) faz com que o resultado do imc tenha apenas 2 casas decimais
+                lblResultado.setText("Sua categoria de IMC é: " + categoria + " e seu IMC é: " + String.format("%.2f",imc));
             }
         });
     }
