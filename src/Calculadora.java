@@ -1,10 +1,8 @@
 import javax.swing.*;
-import javax.swing.border.TitledBorder;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class calculadora {
+public class Calculadora {
     private JTextField txtResultado;
     private JButton btn7;
     private JButton btnMultiplicar;
@@ -22,7 +20,7 @@ public class calculadora {
     private JButton btn2;
     private JButton btn1;
     private JButton btnSubtrair;
-    private JPanel painelCalculadora;
+    private JPanel painelMain;
 
     private double num1, num2, resultado;
     private String operador;
@@ -30,7 +28,7 @@ public class calculadora {
 
     //.settext pega o numero do botão clicado e mostra no resultado
 
-    public calculadora() {
+    public Calculadora() {
         btn0.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -170,8 +168,8 @@ public class calculadora {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Minha Calculadora");
-        frame.setContentPane(new calculadora().painelCalculadora);
+        JFrame frame = new JFrame("Calculadora");
+        frame.setContentPane(new Calculadora().painelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);

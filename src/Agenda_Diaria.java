@@ -11,7 +11,7 @@ public class Agenda_Diaria {
     private JTable tblResultado;
     private JButton btnRemover;
     private JButton btnAdicionar;
-    private JPanel jpAgenda;
+    private JPanel panelMain;
     private JLabel lblSelecioneData;
     private JLabel lblQualseuCompromisso;
     private JSpinner spnHora;
@@ -57,13 +57,13 @@ public class Agenda_Diaria {
 
                     // pega a data e hora
 
-                    String data = new SimpleDateFormat("dd/MM/yyyy").format(spnData.getValue());
-                    String hora = new SimpleDateFormat("HH:mm").format(spnHora.getValue());
+                    data = new SimpleDateFormat("dd/MM/yyyy").format(spnData.getValue());
+                    hora = new SimpleDateFormat("HH:mm").format(spnHora.getValue());
 
                     // Adiciona os dados pegados a tabela
                     modelo.addRow(new Object[]{Compromisso, data, hora});
 
-                    // Limpando o campo de texto
+
                     txtCompromisso.setText("");
                 }
             }
@@ -85,7 +85,7 @@ public class Agenda_Diaria {
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Agenda Diária");
-        frame.setContentPane(new Agenda_Diaria().jpAgenda);
+        frame.setContentPane(new Agenda_Diaria().panelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);

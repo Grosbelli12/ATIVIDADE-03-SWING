@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class Aplicativo_de_Notas {
-    private JPanel AplicativoDeNotas;
+    private JPanel panelMain;
     private JTextField txtInserirNotas;
     private JButton btnadicionarNota;
     private JButton btncalcular;
@@ -63,7 +63,7 @@ public class Aplicativo_de_Notas {
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Aplicativo de Notas");
-        frame.setContentPane(new Aplicativo_de_Notas().AplicativoDeNotas);
+        frame.setContentPane(new Aplicativo_de_Notas().panelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
